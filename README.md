@@ -1,2 +1,2 @@
 # AppleStore
-An analysis of the top IMDB's top 1000 movies.
+An analysis of over 7000 apps from the Apple Store.
