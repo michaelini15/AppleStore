@@ -97,7 +97,7 @@ SELECT
         WHEN lang_num < 10 THEN '<10 Languages'
         WHEN lang_num BETWEEN 10 AND 30 THEN '10-30 Languages'
         ELSE '>30 Languages'
-    END AS Languages_Range
+    END AS Languages_Range,
     avg(user_rating) AS Avg_Rating
 FROM AppleStore
 GROUP BY Languages_Range
