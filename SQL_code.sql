@@ -71,12 +71,11 @@ FROM AppleStore;
 --Get the distribution of app prices
 
 SELECT 
-    (price/2)*2 AS PriceRangeStart,
-    ((price/2)*2)+1 AS PriceRangeEnd,
+    price AS PricePoints,
     COUNT(*) AS NumApps
 FROM AppleStore
-GROUP BY PriceRangeStart
-ORDER BY PriceRangeEnd;
+GROUP BY PricePoints
+ORDER BY PricePoints;
 
 ----------------------------------------------------------------------------------------------------------
 
