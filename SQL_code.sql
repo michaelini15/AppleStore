@@ -18,25 +18,28 @@ SELECT *
 FROM appleStore_description3 
 
 UNION ALL 
-
+   
 SELECT *
 FROM appleStore_description4;
 
------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 
     --EXPLORATORY DATA ANALYSIS--
 
---Check the number of unique apps in both Apple Store tables
+--Compare the number of total rows with unique apps in both Apple Store tables to check for possible duplicates (there are none, both
+--tables have 7197 unique apps and rows)
 
 SELECT 
+    COUNT(*) AS rows,
     COUNT(DISTINCT id) AS UniqueAppIDs
 FROM AppleStore;
 
 SELECT 
+    COUNT(*) AS rows,
     COUNT(DISTINCT id) AS UniqueAppIDs
 FROM appleStore_description_combined;
 
---Check for missing values in key fields 
+--Check for missing values in key fields (there are none)
 
 SELECT  
     COUNT(*) AS MissingValues
@@ -69,7 +72,7 @@ FROM AppleStore;
 
 SELECT 
     (price/2)*2 AS PriceRangeStart,
-    ((price/2)*2)+2 AS PriceRangeEnd,
+    ((price/2)*2)+1 AS PriceRangeEnd,
     COUNT(*) AS NumApps
 FROM AppleStore
 GROUP BY PriceRangeStart
